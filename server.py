@@ -6,16 +6,16 @@ Exposes document ingestion and retrieval via REST API.
 from __future__ import annotations
 
 import argparse
-import logging
 from pathlib import Path
 from typing import Any
 
 from fastapi import Request, status
 
+from sdk import get_logger, get_rag_section
 from modules.api.server import BaseModuleServer
 from modules.rag import RAGService
 
-logger = logging.getLogger(__name__)
+logger = get_logger("rag")
 
 
 class RAGModuleServer(BaseModuleServer):
@@ -161,8 +161,6 @@ class RAGModuleServer(BaseModuleServer):
         """Initialize RAG service on startup."""
         await super().startup()
         try:
-            from sdk.config import get_rag_section
-
             rag_config = get_rag_section(self._config)
             self._service = RAGService(rag_config)
             self.set_ready(True)
@@ -184,8 +182,6 @@ class RAGModuleServer(BaseModuleServer):
         self._config.update(config)
         # Recreate service
         try:
-            from sdk.config import get_rag_section
-
             rag_config = get_rag_section(self._config)
             self._service = RAGService(rag_config)
         except Exception as e:

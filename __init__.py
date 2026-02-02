@@ -6,8 +6,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from sdk.config import get_rag_section
-from sdk.logging import get_logger
+from sdk import get_logger, get_rag_section
 from modules.rag.embed import OllamaEmbedClient
 from modules.rag.store import RAGStore
 
