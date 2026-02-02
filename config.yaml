@@ -1,0 +1,11 @@
+# RAG module defaults.
+# Merged with root config.yaml; root overrides these.
+
+rag:
+  embedding_model: "nomic-embed-text"
+  vector_db_path: "data/rag_chroma"
+  top_k: 5
+  document_qa_top_k: 8
+  chunk_size: 500
+  chunk_overlap: 100
+  min_query_length: 3

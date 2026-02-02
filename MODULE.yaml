@@ -1,0 +1,10 @@
+# RAG module manifest.
+# See modules/README.md for the module standard.
+name: rag
+version: "1.0.0"
+description: Document ingest, embedding, retrieval for LLM context.
+order: 20
+enabled: true
+config_file: config.yaml
+docs_path: docs
+help_entry: README.md
