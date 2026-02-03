@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+
+# Markdown (keep README.md only)
+*.md
+!README.md
