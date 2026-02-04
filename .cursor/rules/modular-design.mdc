@@ -1,0 +1,8 @@
+---
+description: Module self-containment; no imports from talkie-core app, llm, or persistence
+alwaysApply: true
+---
+
+# Modular design (RAG module)
+
+This repo is a **module**. It must be self-contained: only use the **SDK** (and its own code). Do **not** import from `app`, `llm`, or `persistence` of talkie-core. When the module runs as a standalone server, config must be obtained via the module's own config file. The module exposes an HTTP API that core calls for ingest and retrieve.
